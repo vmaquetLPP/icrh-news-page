@@ -3,20 +3,38 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      // Sort by date (ascending)
+
+      // Sort data by date (ascending)
       data.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-      const container = document.getElementById(containerId);
+      // Group news by date
+      const groupedByDate = {};
       data.forEach(item => {
-        const card = document.createElement('div');
-        card.innerHTML = `
-          <h3>${item.title}</h3>
-          <p>${item.description}</p>
-          <p><strong>Date:</strong> ${item.date}</p>
-          <a href="${item.link}" target="_blank">Read more</a>
-        `;
-        container.appendChild(card);
+        if (!groupedByDate[item.date]) {
+          groupedByDate[item.date] = [];
+        }
+        groupedByDate[item.date].push(item);
       });
+
+      // Render the grouped content
+      const container = document.getElementById(containerId);
+      for (const date in groupedByDate) {
+        const dateHeading = document.createElement('h3');
+        dateHeading.textContent = date;
+        container.appendChild(dateHeading);
+
+        const newsList = document.createElement('ul');
+        groupedByDate[date].forEach(item => {
+          const newsItem = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = item.link;
+          link.textContent = item.title;
+          link.target = '_blank'; // Open in a new tab
+          newsItem.appendChild(link);
+          newsList.appendChild(newsItem);
+        });
+        container.appendChild(newsList);
+      }
     } catch (error) {
       console.error('Error loading content:', error);
     }

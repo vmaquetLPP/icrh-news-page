@@ -1,3 +1,4 @@
+/* General body styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -13,31 +14,48 @@ header {
 }
 
 main {
+  display: flex; /* New: Flexbox for side-by-side sections */
+  gap: 2rem;     /* Space between sections */
   padding: 2rem;
-  display: flex;
-  gap: 2rem; /* Add space between columns */
 }
 
+/* Section styles */
 section {
-  flex: 1; /* Each section takes equal space */
+  flex: 1; /* Make each section take equal space */
 }
 
+/* Headings */
 h2 {
   color: #333;
 }
 
-.pinboard {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #333;
 }
 
+/* Lists */
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #007acc;
+}
+
+ul li a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Pinboard-specific styles (if needed for other features) */
 .pinboard div {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 1rem;
-  width: calc(33% - 1rem);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem; /* Space between items in a pinboard */
+  margin-bottom: 1rem; /* Keep spacing for any other pinboard items */
 }
