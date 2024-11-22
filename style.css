@@ -14,21 +14,25 @@ header {
 }
 
 main {
-  display: flex; /* New: Flexbox for side-by-side sections */
+  display: flex; /* Flexbox for side-by-side sections */
   gap: 2rem;     /* Space between sections */
   padding: 2rem;
 }
 
-/* Section styles */
+/* Style for the surrounding box around the panels */
 section {
-  flex: 1; /* Make each section take equal space */
+  flex: 1; /* Each section takes equal space */
+  border: 2px solid #007acc; /* Border for the panel */
+  border-radius: 10px; /* Rounded corners */
+  padding: 1rem; /* Padding inside the box */
+  background-color: #f9f9f9; /* Light background for contrast */
 }
 
-/* Headings */
 h2 {
   color: #333;
 }
 
+/* For date headings */
 h3 {
   margin-top: 1rem;
   font-size: 1.2rem;
@@ -52,10 +56,10 @@ ul li a {
 }
 
 ul li a:hover {
-  text-decoration: underline; /* Add underline on hover */
+  text-decoration: underline; /* Underline on hover */
 }
 
-/* Pinboard-specific styles (if needed for other features) */
+/* Optional: if you want spacing for the "pinboard" items (you can remove if unused) */
 .pinboard div {
-  margin-bottom: 1rem; /* Keep spacing for any other pinboard items */
+  margin-bottom: 1rem;
 }
