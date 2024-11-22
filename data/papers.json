@@ -1,12 +1,14 @@
 [
   {
-    "title": "ICRH Workshop 2024",
-    "description": "Join us for the latest discussions on ICRH technology.",
-    "link": "https://example.com/icrh-workshop"
+    "title": "Advances in ICRH Technology",
+    "description": "An overview of recent innovations in Ion Cyclotron Resonance Heating.",
+    "link": "https://example.com/icrh-paper1",
+    "date": "2023-10-15"
   },
   {
-    "title": "New ICRH Project Launched",
-    "description": "An international collaboration on advanced ICRH systems.",
-    "link": "https://example.com/icrh-project"
+    "title": "ICRH in Fusion Reactors",
+    "description": "A detailed analysis of ICRH applications in modern fusion devices.",
+    "link": "https://example.com/icrh-paper2",
+    "date": "2023-09-12"
   }
 ]
