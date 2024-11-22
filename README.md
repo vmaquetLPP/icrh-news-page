@@ -1,1 +1,1 @@
-# icrh-news-page
+# ICRH news page
