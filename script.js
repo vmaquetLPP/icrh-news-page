@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await response.json();
 
       // Sort data by date (ascending)
-      data.sort((a, b) => new Date(a.date) - new Date(b.date));
+      data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
       // Group news by date
       const groupedByDate = {};
